@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'student',
         'passwords' => 'users',
     ],
 
@@ -45,6 +45,18 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+        'company' => [
+            'driver' => 'session',
+            'provider' => 'company',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -69,7 +81,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Student::class,
+        ],
+        'companies' => [
+            'driver' => 'eloquent',
+            'model' => App\Company::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
